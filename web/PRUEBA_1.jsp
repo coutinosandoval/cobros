@@ -1,6 +1,8 @@
 <%-- 
     Document   : PRUEBA
-    Created on : 08-sep-2014, 18:54:55
+MODIFICADO DESDE GIT
+
+Created on : 08-sep-2014, 18:54:55
     Author     : Administrador
 --%>
 

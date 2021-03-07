@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <Meta http-equiv = "Content-Type"  content = "text / html; charset = ISO-8859-1" >
+<Title> jQuery Autocompletar </ title>
+<script src = " http://code.jquery.com/jquery-1.7.js "
+    type = "text / javascript" > </ script>
+<Script
+    src = " http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js "
+    type = "text / javascript" > </ script>
+<Link
+    href = " http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css "
+    rel = "stylesheet"  type = "text / css"  />
+<Style type = "text / css"  media = "all" >
+.ui-autocomplete { 
+    position: absolute; 
+    cursor: default ;
+    altura: 200px; 
+    overflow-y: scroll; 
+    overflow-x: hidden;}
+</ STYLE>
+ 
+<Script type = "text / javascript" >
+$ (Document) .ready ( función () {
+    $ ( "input # Autotexto" ) .autocomplete ({
+        ancho: 300,
+        max: 10,
+        retraso: 100,
+        minLength: 1,
+        Enfoque automático: true ,
+        cacheLength: 1,
+        desplácese: true ,
+        destacado: falso ,
+        fuente: la función (solicitud, respuesta) {
+            $ .ajax ({
+                url: "/ JSON / AjaxRequest" ,
+                Tipo datos: "json" ,
+                datos: solicitud,
+                de éxito: la función (datos, textStatus, jqXHR) {
+                    console.log (datos);
+                    var  = elementos de datos;
+                    respuesta (artículos);
+                },
+                error: función (jqXHR, textStatus, errorThrown) {
+                     console.log (textStatus);
+                }
+            });
+        }
+ 
+    });
+});
+    
+</ Script>
+</ Head>
+<Body>
+    <H1> jQuery Autocompletar Ejemplo </ h1>
+    <P> En este  ejemplo vamos a tener un cuadro de entrada que proporcionará
+        sugerencias utilizando autocompletar (url o datos, opciones) y Ajax
+        petición. </ p>
+    <Form name = "as400samplecode"  action = ""  method = "get" >
+ 
+        <Table>
+ 
+            <Tr>
+                <Td> <input id = "Autotexto"  maxlength = "20"  />
+                </ Td>
+            </ Tr>
+ 
+        </ Table>
+ 
+    </ Form>
+    </body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Inicio</title>
+		<style type="text/css">
+		.menu{
+    list-style:none;
+	padding:0px;
+	margin:0px;
+}
+.menu li{
+	margin:0px;
+	padding:0px;
+	float:left;
+	position:relative;
+	box-shadow: 2px 2px 4px 1px #000;	
+}
+.menu li a{
+	display: block;
+	width: 150px;
+	height: 45px;
+	padding: 6px;
+	line-height:30px;
+	text-decoration: none;
+	text-align: center;
+	color: #FFF;
+	background-color: #063;
+	position: relative;
+	border-left: 2px solid #333;
+ 
+}
+.menu li a:hover{
+	color:#CF3;
+	background-color:#603;
+}
+
+.menu ul{
+    position:absolute;
+	left:10px;
+	top:36px;
+	margin:0px;
+	list-style:none;
+	padding:0px;
+	opacity:0;
+	transition:opacity .35s ease .2s;
+	-webkit-transition:opacity .35s ease .2s;
+	-moz-transition:opacity .35s ease .2s;
+	-o-transition:opacity .35s ease .2s;
+	visibility:hidden;	
+}
+.menu ul li a{
+	border-bottom:2px solid #333;
+	border-left:none;
+	display:block;
+	text-align:left;
+}
+
+.menu li:hover ul{
+    opacity:1;
+	visibility:visible;
+}
+			
+		</style>
+             
+                
+    </head>
+    <body>
+      
+    <jsp:include page="validacion.jsp"></jsp:include>    
+
+        
+        <div id="header">
+			<ul class="menu">
+				
+                                <li><a href="">Consultas</a>
+                                    <ul>
+                                       <li><a href="consultas.html">Consultas</a></li> 
+                                       <li><a href="">Movimientos</a>
+                                           <ul>
+                                               <li><a href="consultas.html">Movimientos Generales</a></li>
+                                               <li><a href="historiales.jsp">Movimientos Por Enfermero</a></li>
+                                               <li><a href="ventasrealizadast.jsp">Ventas Realizadas</a></li>
+                                               <li><a href="comprasrealizadast.jsp">Compras Efectuadas</a></li>
+                                           </ul>
+                                    </ul>
+                                </li>
+				<li><a href="">Secretaria</a>
+					<ul>
+						<li><a href="secretaria/consultasgenerales.jsp">Ingresar Nueva Consulta</a></li>
+                                                <li><a href="secretaria/datospaciente.jsp">Ingresar Paciente</a></li>
+						 <li><a href="secretaria/bajapacientess.jsp">Salida de Pacientes</a></li>
+                                                <li><a href="secretaria/ingresocamas.jsp">Ingresar Camas al Sistema</a></li>
+                                                
+					</ul>
+				</li>
+				<li><a href="">Farmacia</a>
+					<ul>
+						<li><a href="farmacia/farmacia.jsp">Ventas</a></li>
+						<li><a href="farmacia/bajapacientes.jsp">Cobro a  Pacientes</a></li>
+                                                <li><a href="farmacia/ventasrealizadastconsultas.jsp">Corte Secretaria</a></li>
+						
+					</ul>
+				</li>
+				<li><a href="">Bodegas</a>
+                                    <ul>
+						<li><a href="bodegaENVIA.html">Crear Nueva Bodega</a></li>
+                                                <li><a href="proveeodoresGO.html">Nueva Compra</a></li>
+                                                <li><a href="fincasingreso.jsp">Nueva Finca</a></li>
+						<li><a href="ingresoPROVEEDORES.html">Ingresar Nuevo Proveedor</a></li>
+						<li><a href="productosnuevos.html">Ingresar Nuevo Producto</a></li>
+						<li><a href="grupoproductos.html">Crear Grupos de Productos</a></li>
+                                                <li><a href="traslados.jsp">Trasladar Productos</a></li>
+                                                <li><a href="vencidast.jsp">Productos por Vencer</a></li>
+					</ul>
+                                
+                                </li>
+                                
+                                
+                                <li><a href="">Planillas</a>
+                                  
+                                        <ul>
+                                            <li>
+                                             <li><a href="empleadonuevo.jsp">Crear nuevo empleado</a></li>   
+                                            </li>
+                                        </ul>
+                                </li>
+                                <li><a href="">Mantenimientos</a>
+                                    <ul>
+						<li><a href="mantenimientos/nuevosusuarios.jsp">Agregar Nuevos Usuarios</a></li>
+						<li><a href="mantenimientos/contacto.html">Acerca del Sistema</a></li>
+                                                <li><a href="empleadonuevo.jsp">Nuevo Empleado</a></li>
+				    </ul>
+                                
+                                </li>
+                                
+			</ul>
+		</div>
+        
+    
+    <img src="imagenes/finca.jpg" width="1260" height="590" alt=""/>
+    
+    </body>
+</html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Inicio</title>
+		<style type="text/css">
+		.menu{
+    list-style:none;
+	padding:0px;
+	margin:0px;
+}
+.menu li{
+	margin:0px;
+	padding:0px;
+	float:left;
+	position:relative;
+	box-shadow: 2px 2px 4px 1px #000;	
+}
+.menu li a{
+	display: block;
+	width: 150px;
+	height: 45px;
+	padding: 6px;
+	line-height:30px;
+	text-decoration: none;
+	text-align: center;
+	color: #FFF;
+	background-color: #063;
+	position: relative;
+	border-left: 2px solid #333;
+ 
+}
+.menu li a:hover{
+	color:#CF3;
+	background-color:#603;
+}
+
+.menu ul{
+    position:absolute;
+	left:10px;
+	top:36px;
+	margin:0px;
+	list-style:none;
+	padding:0px;
+	opacity:0;
+	transition:opacity .35s ease .2s;
+	-webkit-transition:opacity .35s ease .2s;
+	-moz-transition:opacity .35s ease .2s;
+	-o-transition:opacity .35s ease .2s;
+	visibility:hidden;	
+}
+.menu ul li a{
+	border-bottom:2px solid #333;
+	border-left:none;
+	display:block;
+	text-align:left;
+}
+
+.menu li:hover ul{
+    opacity:1;
+	visibility:visible;
+}
+			
+		</style>
+             
+                
+    </head>
+    <body>
+      
+    <jsp:include page="validacion.jsp"></jsp:include>    
+
+        
+        <div id="header">
+			<ul class="menu">
+				
+                                
+			 <script>	
+				 var valor=0;
+                               if(valor > 0)
+                               {
+                                   <li><a style.display=="none" href="">Bodegas</a>
+                                    <ul>
+						<li><a href="bodegaENVIA.html">Crear Nueva Bodega</a></li>
+                                                <li><a href="ingresoPROVEEDORES.html">Ingresar Nuevo Proveedor</a></li>
+						<li><a href="productosnuevos.html">Ingresar Nuevo Producto</a></li>
+						<li><a href="grupoproductos.html">Crear Grupos de Productos</a></li>
+                                                
+					</ul>
+                                
+                                </li>
+                               } 
+                               
+                               else
+                               {   
+				<li><a  href="">Bodegas</a>
+                                    <ul>
+						<li><a href="bodegaENVIA.html">Crear Nueva Bodega</a></li>
+                                                <li><a href="ingresoPROVEEDORES.html">Ingresar Nuevo Proveedor</a></li>
+						<li><a href="productosnuevos.html">Ingresar Nuevo Producto</a></li>
+						<li><a href="grupoproductos.html">Crear Grupos de Productos</a></li>
+                                                
+					</ul>
+                                
+                                </li>
+                             
+                              }
+                               
+                                
+                                 
+                                  
+                                  
+                             </script>  
+                                
+                                
+                                <li><a href="">Ventas-Compras</a>
+                                    <ul>
+						<li><a href="ventasnueva.html">Ventas</a></li>
+                                                <li><a href="proveeodoresGO.html">Nueva Compra</a></li>
+                                                
+					</ul>
+                                
+                                </li>
+                                
+                                <li><a href="">Consultas</a>
+                                    <ul>
+						
+                                                <li><a href="ventasefectuadas.jsp">Ventas Realizadas</a></li>
+                                                <li><a href="comprasrealizadas.jsp">Compras Efectuadas</a></li>
+                                                <li><a href="acreedoresgeneral.jsp">Saldos Clientes Totales  </a></li>
+                                                <li><a href="acreedoresindividuales.jsp">Saldos Clientes por Nombre  </a></li>
+                                                <li><a href="proveedoresgeneral.jsp">Saldos Proveedores </a></li>
+                                                <li><a href="proveedoresindividuales.jsp">Saldos Proveedores Por Nombre</a></li>
+                                                <li><a href="existenciasporbodegas.jsp">Existencias por Bodegas</a></li>
+                                                <li><a href="existenciasporbodegasINDIVIDUAL.jsp">Existencias</a></li>
+                                                <li><a href="existenciasporproductos.jsp">Existencias de Productos</a></li>
+                                                <li><a href="inventario.jsp">Inventario</a></li>
+                                                 
+                                               
+                                                
+					</ul>
+                                
+                                </li>
+                                
+                                <li><a href="">Abonos </a>
+                                    <ul>
+						<li><a href="abonosclientes.html">Abonos de Clientes</a></li>
+                                                <li><a href="abonosproveedores.html">Abonos a Proveedores</a></li>
+                                                
+					</ul>
+                                
+                                </li>
+                                
+                               <li><a href="">Bancos</a>
+                                    <ul>
+						<li><a href="cuentasnuevas.html">Agregar Nueva Cuenta</a></li>
+                                                <li><a href="depositos.jsp">Realizar Deposito</a></li>
+						<li><a href="retiros.jsp">Retiros</a></li>
+                                                <li><a href="movimientoscuentas.jsp">Movimientos</a></li>
+						
+					</ul>
+                                
+                                </li>
+                                
+                                <li><a href="">Mantenimientos</a>
+                                    <ul>
+						
+                                        <li><a href="empleadonuevo.jsp">Crear Nuevo Usuario</a></li>
+                                        <li><a href="rolessnuevos.jsp">Crear Roles </a></li>
+                                        <li><a href="rolesnuevos.jsp">Asignar Paginas a Roles</a></li>
+                                        <li><a href="rolesausuarios.jsp">Agregar Roles a  Usuario</a></li>
+                                        <li><a href="contacto.html">Acerca del Sistema</a></li>
+                                               
+				    </ul>
+                                
+                                </li>
+                                
+			</ul>
+		</div>
+        
+    
+    <img src="imagenes/finca.jpg" width="1260" height="590" alt=""/>
+    
+    </body>
+</html>

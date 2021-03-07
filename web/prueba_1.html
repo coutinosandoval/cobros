@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+      <script type="text/javascript">
+function borrar(obj) {
+  fila = obj.parentNode.parentNode;
+  document.getElementById('tabla').removeChild(fila);
+}
+</script>
+        
+    </head>
+    
+    
+    <body>
+        <div>
+
+            <tr>
+                <td WIDTH="30">No.</td>    
+                <td name="carnes" Id="Carnet" WIDTH="120">Carne</td>    
+                <td WIDTH="120">Primer Apellido</td>  
+                <td WIDTH="120">Segundo Apellido</td>    
+                <td WIDTH="120">Primer Nombre</td>    
+                <td WIDTH="120">Segundo Nombre</td>    
+                <td WIDTH="30">Nota1</td>    
+                <td WIDTH="30">Nota 2</td> 
+                <td WIDTH="30">Nota 3</td> 
+                <td WIDTH="30">Nota 4</td> 
+                <td WIDTH="30">Promedio </td> 
+             </tr>  
+            
+          out.println("<tr>");
+          
+              
+          out.println("</tr>");
+             
+             
+  <table>
+<tbody id="tabla">
+<tr>
+   <td>Codigo</td><td> 
+   <td>Descripcion</td><td> 
+   <td>Precio Compra</td><td> 
+   <td>Precion Venta</td><td> 
+   <td>Cod. Vendedor</td><td> 
+  
+<td><img src="/imagenes/eliminar.jpg" width="13px" height="19px">
+<img src="adelante.gif" width="13px" height="19px"></td><td><input type="button" onclick="borrar(this)" />
+</tr>
+<tr>
+<td>fila 2</td><td><input type="button" onclick="borrar(this)" />
+</tr>
+<tr>
+<td>fila 3</td><td><input type="button" onclick="borrar(this)" />
+</tr>
+</tbody>
+</table>
+            
+            
+        
+    </body>
+</html>

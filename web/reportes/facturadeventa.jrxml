@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="facturadeventa" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ef826015-b814-483e-8628-2f4ceff6b61b">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" isBold="true"/>
+	<style name="Detail" fontName="Arial"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="factura" class="java.lang.String"/>
+	<parameter name="usuario" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     ventastemporals.`idventastemporal` AS ventastemporals_idventastemporal,
+     ventastemporals.`codigoproducto` AS ventastemporals_codigoproducto,
+     ventastemporals.`fechaventa` AS ventastemporals_fechaventa,
+     ventastemporals.`facturaventa` AS ventastemporals_facturaventa,
+     ventastemporals.`nitcliente` AS ventastemporals_nitcliente,
+     ventastemporals.`cantidad` AS ventastemporals_cantidad,
+     ventastemporals.`descripcion` AS ventastemporals_descripcion,
+     ventastemporals.`precioventa` AS ventastemporals_precioventa,
+     ventastemporals.`usuario` AS ventastemporals_usuario,
+     ventastemporals.`preciocompra` AS ventastemporals_preciocompra,
+     ventastemporals.`porcentaje` AS ventastemporals_porcentaje
+FROM
+     `ventastemporals` ventastemporals
+WHERE
+ventastemporals.`facturaventa` = $P{factura}]]>
+	</queryString>
+	<field name="ventastemporals_idventastemporal" class="java.lang.Integer"/>
+	<field name="ventastemporals_codigoproducto" class="java.lang.String"/>
+	<field name="ventastemporals_fechaventa" class="java.lang.String"/>
+	<field name="ventastemporals_facturaventa" class="java.lang.String"/>
+	<field name="ventastemporals_nitcliente" class="java.lang.String"/>
+	<field name="ventastemporals_cantidad" class="java.lang.Integer"/>
+	<field name="ventastemporals_descripcion" class="java.lang.String"/>
+	<field name="ventastemporals_precioventa" class="java.lang.Float"/>
+	<field name="ventastemporals_usuario" class="java.lang.String"/>
+	<field name="ventastemporals_preciocompra" class="java.lang.Float"/>
+	<field name="ventastemporals_porcentaje" class="java.lang.Integer"/>
+	<variable name="ventastemporals_fechaventa_1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{ventastemporals_fechaventa}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<staticText>
+				<reportElement style="Title" x="170" y="0" width="263" height="62" uuid="9231b040-f077-4021-863a-4eb754d37a31"/>
+				<textElement verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Coffee Title]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="219" y="62" width="196" height="22" uuid="f70f2541-fe80-4389-b57e-8bf59b8caac8"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Coffee SubTitle]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="14" y="94" width="47" height="17" uuid="26cc4311-e8a0-426c-bfef-14590e21710a"/>
+				<text><![CDATA[Fecha:]]></text>
+			</staticText>
+			<image>
+				<reportElement x="433" y="-115" width="267" height="209" uuid="a41ad717-bf4a-4cff-95a7-06b87bb9d52c"/>
+				<imageExpression><![CDATA["coffee_stain.png"]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement x="66" y="93" width="100" height="20" uuid="44894c05-d68a-498d-a233-d6faf4feeea5"/>
+				<textFieldExpression><![CDATA[$F{ventastemporals_fechaventa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="19" y="114" width="47" height="17" uuid="cfb9c2b2-a669-4a4b-a3c3-971de963b8f9"/>
+				<text><![CDATA[Nit]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="76" y="114" width="61" height="15" uuid="142592af-243d-4645-b487-1072e1557e9d"/>
+				<textFieldExpression><![CDATA[$F{ventastemporals_nitcliente}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="183" y="97" width="47" height="17" uuid="66ef869f-1b7d-423c-9f9c-ac0071ad0037"/>
+				<text><![CDATA[Factura]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="230" y="99" width="61" height="15" uuid="b1593ad0-ff13-4950-b66f-99bfedffd9c7"/>
+				<textFieldExpression><![CDATA[$F{ventastemporals_facturaventa}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="319" y="99" width="47" height="17" uuid="63d84071-1cab-4a4f-bbde-14f10a0f9bec"/>
+				<text><![CDATA[Usuario]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="382" y="101" width="61" height="15" uuid="c28e61f8-0996-4bda-956b-92cb8f8efba1"/>
+				<textFieldExpression><![CDATA[$F{ventastemporals_usuario}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="01144b09-dc6a-4993-ae95-a2af985bc089"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="61" height="15" forecolor="#736343" uuid="dff4bbf0-79b4-421c-8715-73da08aea33b"/>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="76" y="0" width="107" height="15" forecolor="#736343" uuid="356914b3-3c80-46d4-a011-ce813ad0408c"/>
+				<text><![CDATA[Descripcion]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="183" y="0" width="61" height="15" forecolor="#736343" uuid="562b60ad-ca47-4ec6-9282-c5ff56a15791"/>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="244" y="0" width="61" height="15" forecolor="#736343" uuid="aea04d29-94e8-44d4-95c6-5f9f1cda745b"/>
+				<text><![CDATA[Precio Unitario]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="427" y="0" width="61" height="15" forecolor="#736343" uuid="bee82b1d-c713-4ca1-934c-f5a961079ed9"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="488" y="0" width="61" height="15" forecolor="#736343" uuid="4d150fcd-59c8-48e3-97fb-f9a2536b4bd8"/>
+				<text><![CDATA[ventastemporals_porcentaje]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="15" uuid="941fef29-a9b4-4d59-a0f4-640b1894efac"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="61" height="15" uuid="ae52ab26-62da-4cd0-a6e7-c46f5777c10a"/>
+					<textFieldExpression><![CDATA[$F{ventastemporals_codigoproducto}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="180" y="0" width="61" height="15" uuid="e583f23c-bfc4-4eb4-ba64-ac5271d25b86"/>
+					<textFieldExpression><![CDATA[$F{ventastemporals_cantidad}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="78" y="0" width="61" height="15" uuid="cbf49ce7-87f7-4cce-a77b-3a64292ca3d4"/>
+					<textFieldExpression><![CDATA[$F{ventastemporals_descripcion}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="252" y="0" width="61" height="15" uuid="08be8ede-a0dd-4428-b404-2345e947cca5"/>
+					<textFieldExpression><![CDATA[$F{ventastemporals_precioventa}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="488" y="0" width="61" height="15" uuid="a812f06e-83c0-4260-885f-80ac4a9d2321"/>
+					<textFieldExpression><![CDATA[$F{ventastemporals_porcentaje}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="2b68ac02-8b18-4226-83d5-d1cddd7ea6c1"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="597" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="c8cbcbde-3b7f-4a74-81ff-d0f687381d8c"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="533" y="0" width="40" height="20" forecolor="#736343" uuid="e5e4c63f-05d3-4ffb-8d24-6e9730e17c67"/>
+					<textElement verticalAlignment="Middle">
+						<font isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="453" y="0" width="80" height="20" forecolor="#736343" uuid="d35d0aaf-614b-4aee-a372-63fedc2d8c84"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="3253d5d6-8316-49dd-839e-04d0e36c485a"/>
+					<textElement verticalAlignment="Middle">
+						<font isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

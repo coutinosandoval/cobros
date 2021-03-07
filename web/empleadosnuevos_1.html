@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Empleados</title>
+        
+ <link href="calendario_dw/calendario_dw-estilos.css" type="text/css" rel="STYLESHEET">
+   <style type="text/css">
+   body{
+      font-family: tahoma, verdana, sans-serif;
+   }
+   </style>
+   <script type="text/javascript" src="calendario_dw/jquery-1.4.4.min.js"></script>
+   <script type="text/javascript" src="calendario_dw/calendario_dw.js"></script>
+   
+   <script type="text/javascript">
+   $(document).ready(function(){
+      $(".txtfechaingreso") .calendarioDW();
+      
+      //validar numero entero
+      
+       $(".campofechafin") .calendarioDW();
+        
+   })
+   </script>
+
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script src="js/jquery.autocomplete.js"></script>
+<script language="javascript" type="text/javascript">
+
+jQuery(function(){
+$("#txttipoempleado").autocomplete("reg_update_tipoempleado.jsp");
+});
+jQuery(function(){
+$("#txtfincaasignada").autocomplete("reg_update_fincas_nombres.jsp");
+});
+
+</script>
+   
+      
+        
+      
+    </head>
+    <body>
+        <div>Ingreso de Nuevos Empleados</div>
+        <form name="frmempleadosnuevos" action="empleadosnuevosRECIBE.jsp">
+            Codigo Empleado:<input id="txtcodigoempleado" required="true" type="text" name="txtcodigoempleado" value="" size="10" maxlength="10"  />
+           Fecha de Ingreso:<input id ="txtfechaingreso" class="txtfechaingreso" type="text" name="txtfechaingreso" value="" size="10" maxlength="10" />
+        <br></br> Primer Apellido:<input required="true" type="text" name="txtprimerapellido" value="" size="20" />
+         Segundo Apellido:<input required="true" type="text" name="txtsegundoapellido" value="" size="20" />
+        <br></br> Primer Nombre:<input required="true" type="text" name="txtprimernombre" value="" size="20" />
+         Segundo Nombre:<input required="true" type="text" name="txtsegundonombre" value="" size="20" />
+         <br></br>Tipo de Empleado:<input id="txttipoempleado" required="true" type="text" name="txttipoempleado" value="" size="40" />
+         Finca Asignada: <input id="txtfincaasignada" type="text" name="txtfincaasignada" value="" size="30" />
+         <br></br>  <input type="submit" value="Guardar Empleado" name="btnguardarempleado" />
+        </form>
+      <BR/><a href="indexORIGINAL.html">INICIO</a>  
+    </body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Probando autocomplete</title>
+   <link type="text/css" href="css/ui-darkness/jquery-ui-1.8.6.custom.css" rel="Stylesheet" /> 
+   
+   <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/smoothness/jquery-ui.css">
+   <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+   <script type="text/javascript" src="js/jquery-ui-1.8.6.custom.min.js"></script>
+   <script type="text/javascript">
+      $(document).ready(function(){
+         var arrayValoresAutocompletar = [
+            "Álava",
+            "Albacete",
+            "Alicante",
+            "Almería",
+            "Asturias",
+            "Avila",
+            "Badajoz",
+            "Barcelona",
+            "Burgos",
+            "Cáceres",
+            "Cádiz",
+            "Cantabria",
+            "Castellón",
+            "Ceuta",
+            "Ciudad Real",
+            "Córdoba",
+            "Cuenca",
+            "Gerona",
+            "Granada",
+            "Guadalajara",
+            "Guipúzcoa",
+            "Huelva",
+            "Huesca",
+            "Islas Baleares",
+            "Jaén",
+            "La Coruña",
+            "La Rioja",
+            "Las Palmas",
+            "León",
+            "Lérida",
+            "Lugo",
+            "Madrid",
+            "Málaga",
+            "Melilla",
+            "Murcia",
+            "Navarra",
+            "Orense",
+            "Palencia",
+            "Pontevedra",
+            "Salamanca",
+            "Segovia",
+            "Sevilla",
+            "Soria",
+            "Tarragona",
+            "Tenerife",
+            "Teruel",
+            "Toledo",
+            "Valencia",
+            "Valladolid",
+            "Vizcaya",
+            "Zamora",
+            "Zaragoza"
+         ];
+         $("#autoc1").autocomplete({
+            source: arrayValoresAutocompletar
+         })
+      })
+   </script>
+    </head>
+    <body>
+        <h1>Probando el plugin autocomplete de jQuery UI</h1>
+   
+   <form>
+      Escribe una provincia de España: <input type="text" size="20" id="autoc1">
+      <br>
+      * Pon al menos una letra para que salgan opciones.
+      <br>
+      * Puedes escribir algo como "ma" para que salgan sugerencias como "Madrid", "Salamanca", etc.
+   </form>
+    </body>
+</html>

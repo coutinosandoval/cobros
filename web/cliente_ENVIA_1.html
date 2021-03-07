@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Empleados</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>INFORMACION PARA ENVIAR</div>
+        
+        <form name="enviainfo" action="cliente_RECIBE.jsp" method="POST">
+       
+            <BR/> Codigo Empleado: <input type="text" name="codigo" value="" required="true" />
+            <BR/> Apellidos Empleado: <input type="text" name="apellido" value="" required="true" />
+            <BR/> Nombres Empleado:<input type="text" name="nombre" value="" required="true" />
+           <BR/> <input type="submit" value="Enviar" name="btnenviar" />
+           
+        </form> 
+        <form name="frmindex" action="index1.html" method="POST">
+            <input type="submit" value="Regresar a Inicio" name="lbdindex" />
+        </form>
+       <BR/><a href="index1.html">INICIO</a> 
+    </body>
+</html>

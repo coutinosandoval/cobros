@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="facturacion" language="groovy" pageWidth="595" pageHeight="842" columnWidth="535" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="9a36ab35-8a4c-4e0e-8628-b121d08e7625">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" fontName="Times New Roman" isBold="true" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#736343" fontName="Arial"/>
+	<style name="Column header" forecolor="#666666" fontName="Arial" isBold="true"/>
+	<style name="Detail" fontName="Arial"/>
+	<style name="Row" mode="Transparent">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style backcolor="#E6DAC3"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="factura" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT
+     ventastemporals.`idventastemporal` AS ventastemporals_idventastemporal,
+     ventastemporals.`codigoproducto` AS ventastemporals_codigoproducto,
+     ventastemporals.`fechaventa` AS ventastemporals_fechaventa,
+     ventastemporals.`facturaventa` AS ventastemporals_facturaventa,
+     ventastemporals.`nitcliente` AS ventastemporals_nitcliente,
+     ventastemporals.`cantidad` AS ventastemporals_cantidad,
+     ventastemporals.`descripcion` AS ventastemporals_descripcion,
+     ventastemporals.`precioventa` AS ventastemporals_precioventa,
+     ventastemporals.`usuario` AS ventastemporals_usuario,
+     ventastemporals.`preciocompra` AS ventastemporals_preciocompra,
+     ventastemporals.`porcentaje` AS ventastemporals_porcentaje,
+     ventastemporals.`cliente` AS ventastemporals_cliente,
+     ventastemporals.`direccion` AS ventastemporals_direccion,
+     ventastemporals.`cantidad`*ventastemporals.`precioventa` As Total
+FROM
+     `ventastemporals` ventastemporals
+WHERE
+ventastemporals.`facturaventa` = $P{factura}]]>
+	</queryString>
+	<field name="ventastemporals_idventastemporal" class="java.lang.Integer"/>
+	<field name="ventastemporals_codigoproducto" class="java.lang.String"/>
+	<field name="ventastemporals_fechaventa" class="java.lang.String"/>
+	<field name="ventastemporals_facturaventa" class="java.lang.String"/>
+	<field name="ventastemporals_nitcliente" class="java.lang.String"/>
+	<field name="ventastemporals_cantidad" class="java.lang.Integer"/>
+	<field name="ventastemporals_descripcion" class="java.lang.String"/>
+	<field name="ventastemporals_precioventa" class="java.lang.Float"/>
+	<field name="ventastemporals_usuario" class="java.lang.String"/>
+	<field name="ventastemporals_preciocompra" class="java.lang.Float"/>
+	<field name="ventastemporals_porcentaje" class="java.lang.Integer"/>
+	<field name="ventastemporals_cliente" class="java.lang.String"/>
+	<field name="ventastemporals_direccion" class="java.lang.String"/>
+	<field name="Total" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="136" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="110" height="52" uuid="ac9c29a8-f38b-47a1-9d84-f837ed90bf99"/>
+				<imageExpression><![CDATA["coffee.jpg"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement style="Title" x="170" y="-7" width="382" height="31" uuid="1e4a936f-1435-4962-af22-8995b96e4c86"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Repuestos]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="SubTitle" x="219" y="25" width="196" height="22" uuid="b328c16a-8897-4018-8b45-5b14828d1fbf"/>
+				<textElement>
+					<font fontName="Times New Roman" pdfFontName="Times-Roman"/>
+				</textElement>
+				<text><![CDATA[Calle 20 de Octubre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="432" y="28" width="26" height="19" uuid="6ae6dc5b-4c54-4a3f-9413-ba07777b0adf"/>
+				<text><![CDATA[Nit]]></text>
+			</staticText>
+			<image>
+				<reportElement x="433" y="-115" width="267" height="209" uuid="4f31423d-7197-42d9-a5e9-cb3c65a36d22"/>
+				<imageExpression><![CDATA["coffee_stain.png"]]></imageExpression>
+			</image>
+			<staticText>
+				<reportElement x="460" y="28" width="26" height="19" uuid="0d719ced-2a06-45ff-ae1e-f4d159c71192"/>
+				<text><![CDATA[123]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="62" width="45" height="19" uuid="e5b6b98c-a731-4902-b755-ee34013cad6b"/>
+				<text><![CDATA[Factura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="153" y="62" width="79" height="19" uuid="2d0abe0a-3035-46e7-bb47-be0c35cec61a"/>
+				<text><![CDATA[Coatepeque]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="1" y="81" width="45" height="19" uuid="fdc3189d-2764-46d2-a322-364e80a4fb7c"/>
+				<textElement textAlignment="Right"/>
+				<text><![CDATA[Nit Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="154" y="78" width="45" height="19" uuid="5f7d5873-3df6-4e2f-aed7-d31ef2c00267"/>
+				<text><![CDATA[Nombre]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="4" y="100" width="62" height="19" uuid="2c461baa-c78a-4804-babe-e2b29039a7fd"/>
+				<text><![CDATA[Direccion]]></text>
+			</staticText>
+			<textField isStretchWithOverflow="true" pattern="dd MMMMM yyyy">
+				<reportElement style="Detail" x="249" y="66" width="124" height="15" uuid="28d04236-14eb-4318-ae8f-ee44eec91778"/>
+				<textFieldExpression><![CDATA[$F{ventastemporals_fechaventa}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="49" y="83" width="89" height="15" uuid="acf57fbd-cb07-4112-82ff-2cd6448d920b"/>
+				<textFieldExpression><![CDATA[$F{ventastemporals_nitcliente}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="49" y="65" width="46" height="15" uuid="b3c068de-e0e9-47fe-a574-08929b886a1b"/>
+				<textFieldExpression><![CDATA[$F{ventastemporals_facturaventa}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="66" y="104" width="227" height="15" uuid="c7f1f7e9-bf6e-4942-b74c-7414cdcf0b63"/>
+				<textFieldExpression><![CDATA[$F{ventastemporals_direccion}]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement style="Detail" x="199" y="81" width="233" height="15" uuid="f656d22b-dfa0-40d6-8ed7-f4bb767bfe3a"/>
+				<textFieldExpression><![CDATA[$F{ventastemporals_cliente}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="16" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="15" width="555" height="1" uuid="e06886f6-40d4-456c-a648-d127a4ec25e9"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="95" height="15" forecolor="#736343" uuid="9357759f-2c4a-44b1-8e10-65cec0064113"/>
+				<text><![CDATA[Codigo]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="115" y="0" width="189" height="15" forecolor="#736343" uuid="d2732505-28c3-434e-93fe-c207bcd7df66"/>
+				<textElement textAlignment="Center"/>
+				<text><![CDATA[Descripcioon]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="337" y="0" width="46" height="15" forecolor="#736343" uuid="34656dd8-7969-4a98-846b-ace5a975de69"/>
+				<text><![CDATA[Cantidad]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="414" y="0" width="46" height="15" forecolor="#736343" uuid="85a806a2-5bd8-4741-b204-8b2ffb39c024"/>
+				<text><![CDATA[Precio U]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="506" y="0" width="46" height="15" forecolor="#736343" uuid="e347d2a5-0e5f-48a0-b39b-b9c9a583e67a"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="15" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="15" uuid="84c024a9-89d9-4eb1-8845-56556074d5d3"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="0" y="0" width="95" height="15" uuid="a767f36d-746d-43b3-9f0f-2007120d4900"/>
+					<textFieldExpression><![CDATA[$F{ventastemporals_codigoproducto}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="319" y="0" width="46" height="15" uuid="57112409-f70f-41fe-9e50-9f761480373d"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{ventastemporals_cantidad}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" x="95" y="0" width="209" height="15" uuid="fc101c0f-77a6-409a-8910-2f0a060f16bb"/>
+					<textFieldExpression><![CDATA[$F{ventastemporals_descripcion}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="¤ #,##0.00">
+					<reportElement style="Detail" x="385" y="0" width="61" height="15" uuid="d5bb74a7-8795-4cad-8039-60ea217d60af"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{ventastemporals_precioventa}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="¤ #,##0.00">
+					<reportElement style="Detail" x="460" y="0" width="92" height="15" uuid="8a075fb1-cac2-4507-a057-1fce7f6b8aad"/>
+					<textElement textAlignment="Right"/>
+					<textFieldExpression><![CDATA[$F{Total}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="6103f39d-e61c-4982-bb24-f21c11895de9"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="-21" y="1" width="597" height="24" forecolor="#D0B48E" backcolor="#F2EBDF" uuid="5e7f7294-9080-484c-b430-77a99800b690"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="533" y="0" width="40" height="20" forecolor="#736343" uuid="5236f9cc-9e5d-4b6f-8a6f-cd318dc9cd85"/>
+					<textElement verticalAlignment="Middle">
+						<font isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="453" y="0" width="80" height="20" forecolor="#736343" uuid="b72f0362-0c9c-45ab-ad8c-2eaa6c2bb2e7"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="22" y="1" width="197" height="20" forecolor="#736343" uuid="9213eb9f-f79e-44cb-92b2-c6a5dc0a1245"/>
+					<textElement verticalAlignment="Middle">
+						<font isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

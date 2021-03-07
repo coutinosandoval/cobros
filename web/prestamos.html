@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Prestamos</title>
+        
+ <link href="calendario_dw/calendario_dw-estilos.css" type="text/css" rel="STYLESHEET">
+   <style type="text/css">
+   body{
+      font-family: tahoma, verdana, sans-serif;
+   }
+   </style>
+   <script type="text/javascript" src="calendario_dw/jquery-1.4.4.min.js"></script>
+   <script type="text/javascript" src="calendario_dw/calendario_dw.js"></script>
+   
+   <script type="text/javascript">
+   $(document).ready(function(){
+      $(".txtfechaprestamo") .calendarioDW();
+      
+      //validar numero entero
+      
+     
+        
+   })
+   </script>
+
+<link rel="stylesheet" type="text/css" href="style.css" />
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script src="js/jquery.autocomplete.js"></script>
+<script language="javascript" type="text/javascript">
+
+jQuery(function(){
+$("#txtnombreempleado").autocomplete("reg_update_empleado.jsp");
+});
+</script>
+   
+      
+    </head>
+    <body>
+        <div>Ingeso de prestamos de Empleados</div>
+        <form name="frmprestamos" action="prestamosRECIBE.jsp">
+            <br></br><br></br>
+            Fecha:<input required="true" id="txtfechaprestamo" type="text" name="txtfechaprestamo" class="txtfechaprestamo" value="" size="10" />
+            <br></br>
+            Empleado:<input required="true" id="txtnombreempleado" type="text" name="txtnombreempleado" value="" size="70" />
+            Cantidad Prestada:<input required="true" id="txtcantidadprestada" type="text" name="txtcantidadprestada" value="" size="10" />
+            <br></br><input type="submit" value="Guardar" name="btnguardar" />
+            
+            
+        </form>
+        <BR/><a href="indexORIGINAL.html">INICIO</a>
+        
+        
+    </body>
+</html>
